@@ -1,0 +1,205 @@
+REVISION – PATTERN EN XSD (XML Schema)
+====================================
+
+1 - Définition :
+    Un pattern en XSD permet de restreindre la valeur d’un élément
+    en utilisant des expressions régulières (regex).
+
+    Il est utilisé avec :
+        <xs:restriction base="xs:string">
+        <xs:pattern value="..."/>
+
+--------------------------------------------------
+
+2 - Une seule lettre minuscule (de a à z) :
+    Pattern :
+        [a-z]
+
+    Exemple XSD :
+        <xs:element name="elt">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[a-z]"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+
+    Valide : a
+    Non valide : abc
+
+--------------------------------------------------
+
+3 - Trois lettres MAJUSCULES :
+    Pattern :
+        [A-Z][A-Z][A-Z]
+
+    Valide : ABC
+    Non valide : abc
+
+--------------------------------------------------
+
+4 - Trois lettres MAJUSCULES avec intervalles :
+    Pattern :
+        [A-D][A-Z][A-C]
+
+    Valide : BZC
+    Non valide : EBD
+
+--------------------------------------------------
+
+5 - Trois lettres minuscules OU majuscules :
+    Pattern :
+        [a-zA-Z][a-zA-Z][a-zA-Z]
+
+    Valide : abc, ABC
+
+--------------------------------------------------
+
+6 - Une seule lettre parmi x, y ou z :
+    Pattern :
+        [xyz]
+
+    Valide : x, y
+    Non valide : xyz
+
+--------------------------------------------------
+
+7 - Cinq chiffres consécutifs (0 à 9) :
+    Pattern :
+        [0-9][0-9][0-9][0-9][0-9]
+
+    Exemple valide : 12345
+
+--------------------------------------------------
+
+8 - Une ou plusieurs lettres (minuscules ou majuscules) :
+    Pattern :
+        ([a-zA-Z])+
+
+    Valide : sToP
+    Non valide : stop, STOP
+
+--------------------------------------------------
+
+9 - Zéro ou plusieurs lettres minuscules :
+    Pattern :
+        ([a-z])*
+
+    Valide : "" (vide), abc
+
+--------------------------------------------------
+
+10 - Exactement 3 caractères alphanumériques :
+    Pattern :
+        [a-zA-Z0-9]{3}
+
+    Exemple valide : A9c
+
+--------------------------------------------------
+
+11 - Entre 2 et 3 caractères alphanumériques :
+    Pattern :
+        [a-zA-Z0-9]{2,3}
+
+    Valide : AB, A9C
+
+--------------------------------------------------
+
+12 - Soit exactement 2 lettres MAJUSCULES
+     soit exactement 2 chiffres :
+    Pattern :
+        [A-Z]{2}|[0-9]{2}
+
+    Valide : AB, 45
+    Non valide : A1B
+
+--------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+PATTERNS XSD – RÉVISION RAPIDE
+=============================
+
+Lettre minuscule (a → z) :
+[a-z]
+
+Lettre majuscule (A → Z) :
+[A-Z]
+
+Lettre minuscule OU majuscule :
+[a-zA-Z]
+
+Chiffre (0 → 9) :
+[0-9]
+
+Lettre OU chiffre :
+[a-zA-Z0-9]
+
+--------------------------------------------------
+
+Une seule lettre minuscule :
+[a-z]
+
+Une seule lettre majuscule :
+[A-Z]
+
+Une seule lettre parmi x, y ou z :
+[xyz]
+
+--------------------------------------------------
+
+Trois lettres minuscules :
+[a-z][a-z][a-z]
+
+Trois lettres majuscules :
+[A-Z]{3}
+
+Trois lettres (minuscules ou majuscules) :
+[a-zA-Z]{3}
+
+--------------------------------------------------
+
+Exactement N caractères :
+{N}
+Exemple (3 caractères) :
+[a-zA-Z0-9]{3}
+
+Entre N et M caractères :
+{N,M}
+Exemple (2 à 3 caractères) :
+[a-zA-Z0-9]{2,3}
+
+--------------------------------------------------
+
+Zéro ou plusieurs occurrences :
+*
+
+Un ou plusieurs occurrences :
++
+
+--------------------------------------------------
+
+Commence par une lettre et finit par un chiffre :
+[a-zA-Z].*[0-9]
+
+Commence par un chiffre et finit par une lettre :
+[0-9].*[a-zA-Z]
+
+Commence par un chiffre et finit par un chiffre :
+[0-9].*[0-9]
+
+--------------------------------------------------
+
+Exactement 2 lettres MAJUSCULES OU 2 chiffres :
+[A-Z]{2}|[0-9]{2}
+
+--------------------------------------------------

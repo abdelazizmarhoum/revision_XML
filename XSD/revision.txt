@@ -1,0 +1,87 @@
+
+revision du XSD :
+
+1 - Définition :
+    XSD = XML Schema Definition
+    XSD est un langage utilisé pour définir la structure et les règles d’un document XML.
+    Il remplace et améliore la DTD.
+
+2 - Rôle du XSD :
+    - Définir les éléments et attributs XML
+    - Définir l’ordre des éléments
+    - Définir les types de données (string, integer, date, etc.)
+    - Valider un document XML
+
+3 - Avantages du XSD par rapport au DTD :
+    - XSD est écrit en XML
+    - Support des types de données
+    - Plus précis et plus puissant
+    - Meilleure validation
+
+4 - Déclaration d’un schéma XSD :
+    Un schéma XSD commence par l’élément <xs:schema>
+
+    Exemple :
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            ...
+        </xs:schema>
+
+5 - Déclaration d’un élément simple :
+    Un élément simple contient uniquement du texte.
+
+    Exemple :
+        <xs:element name="titre" type="xs:string"/>
+
+6 - Déclaration d’un élément complexe :
+    Un élément complexe contient d’autres éléments et/ou des attributs.
+
+    Exemple :
+        <xs:element name="livre">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="titre" type="xs:string"/>
+                    <xs:element name="auteur" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+7 - Ordre des éléments :
+    L’ordre est défini avec :
+        - xs:sequence : ordre obligatoire
+        - xs:choice   : un seul élément possible
+        - xs:all      : ordre libre (une seule occurrence)
+
+8 - Occurrences :
+    Les occurrences sont définies avec :
+        - minOccurs 
+        - maxOccurs
+
+    Exemple :
+        <xs:element name="chapitre" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+
+9 - Les attributs :
+    Les attributs sont définis avec <xs:attribute>
+
+    Exemple :
+        <xs:attribute name="id" type="xs:string" use="required"/>
+
+10 - Types de données courants :
+    - xs:string
+    - xs:integer
+    - xs:decimal
+    - xs:boolean
+    - xs:date
+
+
+11 - Lien entre XML et XSD :
+    Le fichier XML référence le schéma XSD.
+
+    Exemple :
+        <livre xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="livre.xsd">
+
+Résumé :
+    - XML = données
+    - XSD = règles
+    - XSD valide la structure et les types
+    - XSD est plus puissant que DTD

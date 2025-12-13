@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<racine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///C:/Users/mahou/Documents/Altova/XMLSpy2011/Examples/example1.xsd">
+	<lettreMinuscule>a</lettreMinuscule>
+	<lettreMajuscule>A</lettreMajuscule>
+	<troisMajuscules>ABC</troisMajuscules>
+	<troisLettres>aBc</troisLettres>
+	<lettreXYZ>x</lettreXYZ>
+	<cinqChiffres>12345</cinqChiffres>
+	<mot>test</mot>
+	<minusculesOptionnel>aa</minusculesOptionnel>
+	<alphaNum3>aB2</alphaNum3>
+	<alphaNum2a3>4Z</alphaNum2a3>
+	<lettrePuisChiffre>a8</lettrePuisChiffre>
+	<majOuChiffre>AD</majOuChiffre>
+</racine>

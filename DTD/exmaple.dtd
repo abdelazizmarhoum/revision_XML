@@ -1,0 +1,17 @@
+<!ELEMENT carte (menu+)>
+
+<!ELEMENT menu (entree+, plat+, fromage?, dessert+, prix)>
+<!ATTLIST menu nom CDATA #REQUIRED>
+
+<!ELEMENT entree (code, nom, description)>
+<!ELEMENT plat (code, nom, description)>
+<!ELEMENT fromage (code, nom, description)>
+<!ELEMENT dessert (code, nom, description)>
+
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+
+<!ELEMENT prix (#PCDATA)>
+<!ATTLIST prix valeur CDATA #REQUIRED>
+<!ATTLIST prix monnaie CDATA #REQUIRED>

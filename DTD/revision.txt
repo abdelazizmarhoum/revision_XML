@@ -1,0 +1,113 @@
+revision du DTD :
+
+1 - définition :
+    DTD = Document Type Definition
+    Le rôle d’une DTD est de définir la structure d’un document XML.
+    Elle permet de décrire :
+        - les éléments autorisés
+        - leur ordre
+        - leur nombre d’occurrences
+        - les attributs associés
+
+2 - Déclaration d’un élément :
+    <!ELEMENT nom type_element>
+
+    nom : Le nom de l’élément
+    type_element : Le type auquel il est associé (texte, vide, séquence, etc.)
+
+3 - Les types des éléments :
+
+    - PCDATA :
+        Déclaration d’un élément de type texte.
+        <!ELEMENT element (#PCDATA)>
+        Exemple XML :
+            <element>Je suis un élément</element>
+
+    - EMPTY :
+        Déclaration d’un élément vide.
+        <!ELEMENT element EMPTY>
+        Exemple XML :
+            <element type="demo"/>
+
+    - ANY :
+        Déclaration d’un élément quelconque (tout est autorisé).
+        <!ELEMENT adresse ANY>
+        Exemple XML :
+            <adresse>
+                <rue/>
+                <ville>Paris</ville>
+            </adresse>
+
+4 - Déclaration d’un élément de type séquence :
+    <!ELEMENT element (e1, e2, e3)>
+    L’ordre des éléments doit être respecté.
+
+    Exemple XML :
+        <element>
+            <e1>...</e1>
+            <e2>...</e2>
+            <e3>...</e3>
+        </element>
+
+5 - Opérateurs d’occurrence :
+    ?  : 0 ou 1 fois (optionnel)
+    *  : 0 ou plusieurs fois
+    +  : 1 ou plusieurs fois
+
+    Exemples :
+        <!ELEMENT livre (titre, auteur?)>
+        <!ELEMENT liste (item*)>
+        <!ELEMENT menu (plat+)>
+
+6 - Choix (alternatives) :
+    Permet de choisir un seul élément parmi plusieurs.
+
+    <!ELEMENT paiement (carte | cash)>
+
+    Exemple XML :
+        <paiement>
+            <carte/>
+        </paiement>
+
+7 - Contenu mixte :
+    Permet de mélanger du texte et des éléments.
+
+    <!ELEMENT paragraphe (#PCDATA | gras | italique)*>
+
+    Exemple XML :
+        <paragraphe>
+            Ceci est <gras>important</gras>
+        </paragraphe>
+
+8 - Déclaration des attributs :
+    Syntaxe :
+        <!ATTLIST element nom_attribut type valeur>
+
+    Types d’attributs courants :
+        - CDATA
+        - ID
+        - IDREF
+
+    Valeurs possibles :
+        - #REQUIRED : obligatoire
+        - #IMPLIED : optionnel
+        - "valeur"  : valeur par défaut
+        - #FIXED "valeur" : valeur fixe
+
+    Exemple :
+        <!ATTLIST livre id CDATA #REQUIRED>
+
+    Exemple XML :
+        <livre id="l1">
+
+9 - DTD interne :
+    La DTD est définie à l’intérieur du document XML.
+
+    Exemple :
+        <!DOCTYPE livre [
+            <!ELEMENT livre (titre)>
+            <!ELEMENT titre (#PCDATA)>
+        ]>
+
+
+

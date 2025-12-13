@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- 1. Une seule lettre minuscule -->
+    <xs:element name="lettreMinuscule">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-z]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 2. Une seule lettre majuscule -->
+    <xs:element name="lettreMajuscule">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 3. Trois lettres majuscules -->
+    <xs:element name="troisMajuscules">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z]{3}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 4. Trois lettres minuscules ou majuscules -->
+    <xs:element name="troisLettres">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-zA-Z]{3}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 5. Une lettre parmi x, y ou z -->
+    <xs:element name="lettreXYZ">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[xyz]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 6. Cinq chiffres -->
+    <xs:element name="cinqChiffres">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[0-9]{5}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 7. Une ou plusieurs lettres -->
+    <xs:element name="mot">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-zA-Z]+"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 8. Zéro ou plusieurs lettres minuscules -->
+    <xs:element name="minusculesOptionnel">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 9. Exactement 3 caractères alphanumériques -->
+    <xs:element name="alphaNum3">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-zA-Z0-9]{3}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 10. Entre 2 et 3 caractères alphanumériques -->
+    <xs:element name="alphaNum2a3">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-zA-Z0-9]{2,3}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 11. Commence par une lettre et finit par un chiffre -->
+    <xs:element name="lettrePuisChiffre">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-zA-Z].*[0-9]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- 12. Exactement 2 lettres majuscules OU 2 chiffres -->
+    <xs:element name="majOuChiffre">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z]{2}|[0-9]{2}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+</xs:schema>

@@ -1,0 +1,71 @@
+<carte>
+    <menu nom="menu1">
+        <entree>
+            <code>e1</code>
+            <nom>ent1</nom>
+            <description>starter description</description>
+        </entree>
+
+        <plat>
+            <code>p1</code>
+            <nom>plat1</nom>
+            <description>main course description</description>
+        </plat>
+
+        <fromage>
+            <code>f1</code>
+            <nom>fromage1</nom>
+            <description>cheese description</description>
+        </fromage>
+
+        <dessert>
+            <code>d1</code>
+            <nom>dessert1</nom>
+            <description>dessert description</description>
+        </dessert>
+
+        <prix valeur="200" monnaie="EUR">200</prix>
+    </menu>
+
+    <menu nom="menu2">
+        <entree>
+            <code>e2</code>
+            <nom>ent2</nom>
+            <description>starter description</description>
+        </entree>
+        <entree>
+            <code>e3</code>
+            <nom>ent3</nom>
+            <description>starter description</description>
+        </entree>
+
+        <plat>
+            <code>p2</code>
+            <nom>plat2</nom>
+            <description>main course description</description>
+        </plat>
+        <plat>
+            <code>p3</code>
+            <nom>plat3</nom>
+            <description>main course description</description>
+        </plat>
+
+        <dessert>
+            <code>d2</code>
+            <nom>dessert2</nom>
+            <description>dessert description</description>
+        </dessert>
+        <dessert>
+            <code>d3</code>
+            <nom>dessert3</nom>
+            <description>dessert description</description>
+        </dessert>
+        <dessert>
+            <code>d4</code>
+            <nom>dessert4</nom>
+            <description>dessert description</description>
+        </dessert>
+
+        <prix valeur="500" monnaie="EUR">500</prix>
+    </menu>
+</carte>
