@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fichier d'exemple pour XPath -->
+<repertoire>
+    <film id="f1">
+        <titre>Inception</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <acteurs>
+            <acteur>
+                <nom>DiCaprio</nom>
+                <prenom>Leonardo</prenom>
+                <naissance>1974-11-11</naissance>
+                <salaire>20000000</salaire>
+                <site>http://leonardodicaprio.com</site>
+            </acteur>
+            <acteur>
+                <nom>Hardy</nom>
+                <prenom>Tom</prenom>
+                <naissance>1977-09-15</naissance>
+                <salaire>5000000</salaire>
+            </acteur>
+            <acteur>
+                <nom>Watanabe</nom>
+                <prenom>Ken</prenom>
+                <naissance>1959-10-21</naissance>
+                <salaire>3000000</salaire>
+            </acteur>
+        </acteurs>
+    </film>
+    
+    <annuaire>
+        <entree>
+            <nom>Dupont</nom>
+            <prenom>Jean</prenom>
+            <telephones>
+                <telephone type="fixe">0123456789</telephone>
+                <telephone type="portable">0612345678</telephone>
+            </telephones>
+        </entree>
+    </annuaire>
+</repertoire>

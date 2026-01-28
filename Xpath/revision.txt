@@ -1,0 +1,69 @@
+revision du XPath :
+
+1 - Définition :
+    XPath (XML Path Language) est un standard W3C.
+    C'est un langage utilisé pour naviguer dans un document XML et en extraire des informations (éléments, attributs, texte, commentaires, etc.).
+
+2 - Représentation du document :
+    XPath voit un document XML comme un arbre de nœuds.
+    Les types de nœuds principaux sont :
+        - Éléments
+        - Attributs
+        - Texte
+        - Commentaires
+        - Racine (le document lui-même)
+
+3 - Relations entre les nœuds :
+    - Parent : Le nœud supérieur direct.
+    - Enfant : Les nœuds directement en dessous.
+    - Frères (Siblings) : Nœuds ayant le même parent.
+    - Ancêtres : Parent, grand-parent, etc.
+    - Descendants : Enfants, petits-enfants, etc.
+
+4 - Syntaxe de base :
+    - /   : Sélectionne depuis la racine.
+    - //  : Sélectionne les nœuds n'importe où dans le document.
+    - .   : Sélectionne le nœud courant.
+    - ..  : Sélectionne le parent du nœud courant.
+    - @   : Sélectionne un attribut.
+    - *   : Sélectionne n'importe quel élément.
+    - @*  : Sélectionne n'importe quel attribut.
+    - node() : Sélectionne n'importe quel type de nœud.
+
+5 - Les Prédicats (Filtres) :
+    Les prédicats sont utilisés pour trouver un nœud spécifique en utilisant des conditions entre crochets [ ].
+
+    Exemples :
+        - //film[1] : Le premier élément film.
+        - //film[last()] : Le dernier élément film.
+        - //telephone[@type='fixe'] : Les téléphones avec l'attribut type="fixe".
+        - //acteur[salaire > 5000] : Les acteurs avec un salaire supérieur à 5000.
+
+6 - Les Axes :
+    Les axes permettent de définir une recherche par rapport au nœud courant.
+
+    Syntaxe : axe::nœud
+
+    Exemples :
+        - child::node() : Les enfants du nœud.
+        - parent::node() : Le parent du nœud.
+        - preceding-sibling::node() : Les frères qui précèdent le nœud.
+        - following-sibling::node() : Les frères qui suivent le nœud.
+        - self::node() : Le nœud lui-même.
+
+7 - Fonctions utiles :
+    - contains(chaîne, sous-chaîne) : Vérifie si une chaîne contient une sous-chaîne.
+    - starts-with(chaîne, début) : Vérifie si une chaîne commence par une valeur.
+    - count(nœuds) : Compte le nombre de nœuds.
+    - not(condition) : Inverse la condition.
+
+    Exemples :
+        - //acteur[contains(nom, 'W')] : Acteurs dont le nom contient 'W'.
+        - //acteur[starts-with(prenom, 'H')] : Acteurs dont le prénom commence par 'H'.
+        - //acteur[not(child::site)] : Acteurs qui n'ont pas d'élément enfant 'site'.
+
+8 - Opérateurs :
+    - |   : Union de deux sélections (ex: //film | //acteur).
+    - +, -, *, div, mod : Opérateurs arithmétiques.
+    - =, !=, <, >, <=, >= : Opérateurs de comparaison.
+    - or, and : Opérateurs logiques.
